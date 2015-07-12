@@ -2,8 +2,6 @@ data <- read.csv("household_power_consumption_subset.csv", sep = ";")
 datetimeStrings <- paste(data$Date, data$Time)
 data$datetime <- strptime(datetimeStrings, "%d/%m/%Y %H:%M:%S")
 
-Sys.setlocale("LC_TIME", "English")
-
 png(filename = "plot3.png")
 with(data, {
     plot(datetime, Sub_metering_1, type = "n", ylab = "Energy sub metering", xlab="")
